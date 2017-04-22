@@ -6,25 +6,26 @@
 #
 
 library(shiny)
-library(ggplot2)
-library(ggrepel)
 
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("NaCTeM Acromine Acronym Finder"),
-
-  div(
-      p("This simple app allows you to search for acronyms using the Acromine REST
-        service found at",
-        a("http://www.nactem.ac.uk/software/acromine/rest.html"),
-        ", and displays a table showing all of the long-form definitions in the Acromine
-        corpus, the frequency they occur in the corpus, and the year in which they were added.")
-  ),
+  titlePanel("NaCTeM Acromine Acronym Finder", windowTitle = "NaCTeM Acromine Acronym Finder"),
   
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
+        div(
+            p("This simple app allows you to search for acronyms using the Acromine REST
+              service found at",
+              a("http://www.nactem.ac.uk/software/acromine/rest.html"),
+              "and displays a table showing all of the long-form definitions in the Acromine
+              corpus, the frequency with which they occur in the corpus, and the year in which they were added."),
+            p("The source code for this project can be located at",
+              a("https://github.com/Rory-Gaddin/data-products-assignment")
+            )
+        ),
+        
         textInput(
             "acronym", 
             "Please enter an acronym to search for here:", 
